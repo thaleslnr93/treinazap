@@ -1,11 +1,11 @@
-name: Deploy Treinazap-PRD -S3
+name: Deploy Treinazap - S3
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -15,7 +15,8 @@ jobs:
         run: npm install && npm run build
         env:
            CI: "false"
-      - name:  LISTAR ARQUIVOS
-        run: ls -la build/*  
-               
-            
+      - name: DEPLOY S3
+        run: cd build && AWS_ACCESS_KEY_ID=${CHAVE} AWS_SECRET_ACCESS_KEY=${SENHA} aws s3 sync . s3://treinazap37 --acl public-read --delete
+        env:
+           CHAVE: ${{ secrets.ACCESS_KEY }}
+           SENHA: ${{ secrets.SECRET_KEY }}
