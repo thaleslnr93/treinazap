@@ -1,12 +1,12 @@
 import firebase from 'firebase';	
 
 const firebaseConfig = {	
-    apiKey: "AIzaSyCxCogR3Wq9cp1hW34WV2_eOQn-xyGWI8w",
-    authDomain: "treinazap-7a0bf.firebaseapp.com",
-    projectId: "treinazap-7a0bf",
-    storageBucket: "treinazap-7a0bf.appspot.com",
-    messagingSenderId: "67704279408",
-    appId: "1:67704279408:web:0305dab83c992af73affb5"
+    apiKey: "${VAR_API}",
+    authDomain: "${VAR_AUTH}",
+    projectId: "${VAR_PROJECT}",
+    storageBucket: "${VAR_STORAGE}",
+    messagingSenderId: "${VAR_MESS}",
+    appId: "${VAR_APP}"
 };	
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);	
