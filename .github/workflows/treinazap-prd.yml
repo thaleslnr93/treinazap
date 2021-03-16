@@ -1,4 +1,4 @@
-name: Deploy Treinazap S3
+name: Deploy Treinazap-S3
 
 on:
   workflow_dispatch:
@@ -12,7 +12,4 @@ jobs:
         with:
           node-version: 12.21.0
       - name: INSTALL E BUILD
-      - run: npm install && npm run build
-      - name: LISTAR ARQUIVOS
-        run: ls -la build/*    
-
+      - run: node--version
