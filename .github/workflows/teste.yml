@@ -1,4 +1,4 @@
-name: teste ls-la
+name: Deploy listar-repo
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
-    steps:  
-      - name: list files
-        run: ls -la        
+    steps:
+      - uses: actions/checkout@v2 
+      - name: list repo
+        run: ls -la 
